@@ -1,0 +1,117 @@
+// THEME
+@mixin theme() {
+    .ls {
+        @content;
+    }
+}
+
+// CONTAINER WIDTH
+@mixin containerWidth($maxWidth: $container-max-width, $paddingX: $container-padding-x, $paddingY: $container-padding-y) {
+    max-width: $maxWidth;
+    margin: 0 auto;
+    padding: $paddingY $paddingX;
+}
+
+@mixin fullWidth() {
+    width: 100%;
+}
+
+@mixin containerSpacing() {
+    padding: 60px 0;
+}
+
+// BROWSERS CORE
+@mixin setBrowsersCore($attr, $value, $cores: $browsers-core-default) {
+    #{$attr}: #{$value};
+
+    @each $core in $cores {
+        -#{$core}-#{$attr}: #{$value};
+    }
+}
+
+// FLEXBOX
+@mixin flex($justifyContent: center, $alignItems: center, $flexWrap: wrap) {
+    display: flex;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+    flex-wrap: $flexWrap;
+}
+
+@mixin flexBasis($basis, $gap: 0) {
+    @if $gap != 0 {
+        flex-basis: calc($basis - $gap);
+    }
+
+    @else {
+        flex-basis: $basis;
+    }
+}
+
+@mixin flex1($gap: 0) {
+    @include flexBasis(100%, $gap);
+}
+
+@mixin flex2($gap: 0) {
+    @include flexBasis(calc(100% / 2), $gap);
+}
+
+@mixin flex3($gap: 0) {
+    @include flexBasis(calc(100% / 3), $gap);
+}
+
+@mixin flex4($gap: 0) {
+    @include flexBasis(calc(100% / 4), $gap);
+}
+
+// POSITION
+// Relative
+@mixin relative() {
+    position: relative;
+}
+
+// Absolute
+@mixin absolute($top: 0, $left: 0) {
+    position: absolute;
+    top: $top;
+    left: $left;
+}
+
+// Fixed
+@mixin fixed($top: 0, $left: 0) {
+    position: fixed;
+    top: $top;
+    left: $left;
+}
+
+// TRANSITION
+@mixin transition($property: $transition-property, $duration: $transition-duration, $timingFunction: $transition-timing-function, $delay: 0s) {
+    transition: $property $duration $timingFunction $delay;
+}
+
+// BACKGROUND IMAGE
+@mixin backgroundImage($image: "", $repeat: no-repeat, $size: cover, $position: center center) {
+    @if $image != "" {
+        background-image: url($image);
+    }
+
+    background-repeat: $repeat;
+    background-size: $size;
+    background-position: $position;
+}
+
+// RESPONSIVE DESIGN
+@mixin setResponsiveDesign($screenWidth, $isMaxWidth: false) {    
+    $width: calc($screenWidth - 1px);
+
+    @if $isMaxWidth == true {
+        @media screen and (max-width: $screenWidth) {
+            @content;
+        }
+    }
+
+    @else {
+        @media screen and (min-width: $width) {
+            @content;
+        }
+    }
+}

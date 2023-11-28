@@ -1,0 +1,16 @@
+// FONTS
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap');
+
+// VARIABLES AND MIXINS
+@import "variables";
+@import "mixins";
+
+// BOOT CONFIG
+@import "boot";
+
+// THEME CONFIG
+@import "theme/header";
+@import "theme/headline";
+@import "theme/presentation";
+@import "theme/creations";
+@import "theme/footer";

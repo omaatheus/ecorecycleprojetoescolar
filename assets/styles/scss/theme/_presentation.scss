@@ -1,0 +1,53 @@
+/* PRESENTATION SECTION */
+@include theme() {
+    &_presentation {
+        @include fullWidth;
+        @include containerSpacing;
+
+        &_content {
+            @include containerWidth($breakpoint-mobile-landscape);
+            @include flex(flex-start);
+            @include relative;
+
+            @include setResponsiveDesign($breakpoint-desktop-sd) {
+                @include containerWidth;
+            }
+
+            &_image {
+                margin-bottom: 40px;
+                @include flex1;
+
+                @include setResponsiveDesign($breakpoint-desktop-sd) {
+                    @include flexBasis(60%);
+                    margin-bottom: 0;
+                }
+            }
+
+            &_info {
+                text-align: center;
+                @include flex1;
+                
+                @include setResponsiveDesign($breakpoint-desktop-sd) {
+                    @include flexBasis(unset);
+                    @include absolute(unset, unset);
+                    bottom: 0;
+                    right: 0;
+                    width: 55%;
+                    background-color: $color-white;
+                    padding: 60px 60px 0 60px;
+                    text-align: left;
+                }
+
+                &_title {
+                    margin-bottom: 20px;
+                }
+
+                &_text {
+                    @include setResponsiveDesign($breakpoint-desktop-sd) {                        
+                        font-size: 0.9em;
+                    }
+                }
+            }
+        }
+    }
+}

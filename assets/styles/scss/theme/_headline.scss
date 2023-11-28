@@ -1,0 +1,46 @@
+/* HEADLINE */
+@include theme() {
+    &_headline {
+        @include fullWidth;
+        height: 800px;
+        @include backgroundImage("../../images/mobile/image-hero.jpg");
+        margin-bottom: 60px;
+
+        @include setResponsiveDesign($breakpoint-tablet-landscape) {
+            @include backgroundImage("../../images/desktop/image-hero.jpg");
+            background-position: top center;
+            height: 600px;
+        }
+
+        &_content {
+            @include containerWidth;
+            @include flex;
+            height: 100%;
+
+            @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                justify-content: flex-start;
+            }
+
+            &_title {
+                border: 2px solid $color-white;
+                padding: 20px;
+
+                @include setResponsiveDesign($breakpoint-mobile-landscape) {
+                    padding: 30px;
+                }
+
+                h1 {                    
+                    span  {
+                        font-size: 1em;
+                        display: block;
+                        color: $color-white;
+
+                        @include setResponsiveDesign($breakpoint-mobile-landscape) {
+                            font-size: 2em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

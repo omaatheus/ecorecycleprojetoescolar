@@ -1,0 +1,138 @@
+/* FOOTER */
+@include theme() {
+    &_footer {
+        @include fullWidth;
+        margin-top: 120px;
+        background-color: $color-black;
+        color: $color-white;
+
+        &_content {
+            @include containerWidth($container-max-width, $container-padding-x, 60px);
+            @include flex(space-between);
+
+            &_nav1 {
+                @include flex1;
+                text-align: center;
+
+                @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                    @include flexBasis(unset);
+                }
+
+                &_logo {
+                    @include flex;
+                    margin-bottom: 40px;
+
+                    @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                        justify-content: flex-start;
+                        margin-bottom: 20px;
+                    }
+
+                    img {
+                        width: 160px;
+                    }
+                }
+
+                &_menu {
+                    margin-bottom: 40px;
+
+                    @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                        margin-bottom: 0;
+                    }
+
+                    ul {
+                        @include flex;
+                        flex-direction: column;
+                        column-gap: 30px;
+
+                        @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                            flex-direction: row;
+                            text-align: left;
+                        }
+
+                        li {
+                            a{
+                                padding: 10px 0;
+                                display: inline-block;
+                                color: inherit;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &_nav2 {
+                @include flex1;
+                text-align: center;
+
+                @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                    @include flexBasis(unset);
+                }
+
+                &_social {
+                    margin-bottom: 20px;
+
+                    ul {
+                        @include flex;
+                        column-gap: 20px;
+
+                        @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                            justify-content: flex-end;
+                        }
+
+                        li {
+                            a {
+                                color: inherit;
+                                padding-bottom: 10px;
+
+                                &::before {
+                                    @include fullWidth;
+                                }
+
+                                i {                                    
+                                    font-size: 1.4em;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &_rights {
+                    color: $color-dark-gray;
+                    font-size: 0.8em;
+                    
+                    @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                        text-align: right;
+                    }
+                }
+            }
+        }
+
+        &_attribution {
+            padding-bottom: 10px;
+
+            @include setResponsiveDesign($breakpoint-tablet) {
+                @include flex;
+                gap: 8px;
+            }
+
+            p {
+                font-size: 11px;
+                text-align: center;
+                font-family: $font-josefin-sans;
+
+                @include setResponsiveDesign($breakpoint-tablet) {
+                    display: inline-block;
+                }
+
+                a {
+                    font-size: inherit;
+                    color: $color-dark-gray;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}

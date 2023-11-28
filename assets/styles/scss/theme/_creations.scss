@@ -1,0 +1,89 @@
+/* CREATIONS SECTION */
+@include theme() {
+    &_creations {
+        @include fullWidth;
+        @include containerSpacing;
+        @include relative;
+
+        &_content {
+            @include containerWidth($breakpoint-mobile-landscape);
+
+            @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                @include containerWidth;
+            }
+
+            &_title {
+                text-align: center;
+                margin-bottom: 40px;
+
+                @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                    text-align: left;
+                    @include flex(space-between);
+                }
+            }
+
+            &_seeall {
+                @include absolute(100%, 50%);
+                transform: translateX(-50%);
+
+                @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                    position: static;
+                    transform: none;
+                }
+            }
+
+            &_gallery {
+                @include flex;
+                gap: 20px;
+
+                &_item {
+                    @include flex1;
+                    @include relative;
+                    background-color: $color-black;
+                    @include transition;
+
+                    @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                        @include flex4(20px);
+                    }
+
+                    &:hover {
+                        background: none;
+
+                        .ls_creations_content_gallery_item_image {
+                            opacity: 0.3;
+                        }
+
+                        .ls_creations_content_gallery_item_title {
+                            a {
+                                color: $color-black;
+                            }
+                        }
+                    }
+
+                    &_image {
+                        opacity: 0.6;
+                    }
+
+                    &_title {
+                        @include absolute(unset, 20px);
+                        bottom: 20px;
+
+                        a {
+                            color: $color-white;
+                            display: block;
+
+                            span {
+                                font-size: 1.6em;
+                                display: inherit;
+
+                                @include setResponsiveDesign($breakpoint-desktop-sd) {
+                                    font-size: 2em;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

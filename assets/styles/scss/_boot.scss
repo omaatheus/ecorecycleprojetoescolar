@@ -1,0 +1,110 @@
+/* BOOT CONFIG */
+* {
+    margin: 0;
+    padding: 0;
+    @include setBrowsersCore(box-sizing, border-box);
+    font-size: 1rem;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: $font-alata;
+    color: $color-dark-gray;
+
+    h1, h2, h3, h4, h5, h6 {
+        text-transform: uppercase;
+        font-family: $font-josefin-sans;
+        color: $color-black;
+        font-weight: normal;
+    }
+
+    h1 {
+        font-size: 2.2em;
+    }
+
+    a {
+        text-decoration: none;
+        @include transition;
+    }
+
+    ul {
+        li {
+            list-style: none;
+        }
+    }
+
+    p {
+        line-height: 1.6em;
+    }
+
+    img {
+        display: block;
+        width: 100%;
+    }
+
+    @include theme() {
+        &_button {
+            border: 1px solid $color-black;
+            padding: 12px 40px;
+            display: inline-block;
+            color: $color-black;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            background: none;
+            cursor: pointer;
+
+            @include setResponsiveDesign($layout-mobile, true) {
+                font-size: 0.8em;
+            }
+
+            &:hover {
+                background-color: $color-black;
+                color: $color-white;
+            }
+        }
+
+        &_menuhover {
+            @include relative;
+
+            &:hover::before {
+                transform:  translateX(-50%) scaleX(1);
+            }
+
+            &::before {
+                content: "";
+
+                @include absolute(unset, 50%);
+                bottom: 0;
+                transform: translateX(-50%) scaleX(0);
+                width: 50%;
+                height: 3px;
+                background-color: $color-white;
+
+                @include transition;
+            }
+        }
+
+        &_arrowup {
+            @include fixed(unset, unset);
+            bottom: 0;
+            right: 20px;
+
+            width: 40px;
+            height: 40px;
+            background-color: $color-black;
+
+            @include flex;
+            cursor: pointer;
+
+            opacity: 0;
+            display: none;
+
+            @include transition;
+
+            i {
+                color: $color-white;
+                font-size: 1.2em;
+            }
+        }
+    }
+}

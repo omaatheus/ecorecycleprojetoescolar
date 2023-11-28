@@ -1,0 +1,89 @@
+/* HEADER */
+@include theme() {
+    &_header {
+        @include fullWidth;
+        padding-top: 40px;
+        @include fixed;
+        z-index: 20;
+
+        @include transition;
+
+        &_content {
+            @include containerWidth;
+            @include flex(space-between);
+            @include relative;
+
+            &_title {
+                h1 {
+                    display: none;
+                }
+
+                &_logo {
+                    @include relative;
+                    z-index: 20;
+
+                    img {
+                        width: 160px;
+                    }
+                }
+            }
+
+            &_menu {
+                &_icon {
+                    font-size: 1.8em;
+                    color: $color-white;
+                    @include relative;
+                    z-index: 20;
+                    cursor: pointer;
+                    @include transition;
+
+                    @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                        display: none;
+                    }
+                }
+
+                ul {
+                    @include fixed(0, -100%);
+                    @include fullWidth;
+                    min-height: 100%;
+                    background-color: $color-black;
+                    padding: 40px 30px;
+                    z-index: 10;
+                    overflow: auto;
+
+                    @include flex(center, flex-start);
+                    flex-direction: column;
+                    gap: 20px;
+
+                    @include transition;
+
+                    @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                        position: static;
+                        padding: 0;
+                        background: none;
+                        flex-direction: row;
+                    }
+
+                    li {
+                        a {
+                            color: $color-white;
+                            font-family: $font-josefin-sans;
+                            font-size: 2em;
+                            font-weight: 300;
+                            text-transform: uppercase;
+
+                            display: inline-block;
+                            padding: 10px 0;
+
+                            @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                                font-size: 1em;
+                                text-transform: none;
+                                font-family: $font-alata;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
