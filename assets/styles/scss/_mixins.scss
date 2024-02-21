@@ -1,11 +1,11 @@
-// THEME
+// tema
 @mixin theme() {
     .ls {
         @content;
     }
 }
 
-// CONTAINER WIDTH
+// container width
 @mixin containerWidth($maxWidth: $container-max-width, $paddingX: $container-padding-x, $paddingY: $container-padding-y) {
     max-width: $maxWidth;
     margin: 0 auto;
@@ -20,7 +20,7 @@
     padding: 60px 0;
 }
 
-// BROWSERS CORE
+// browsers core
 @mixin setBrowsersCore($attr, $value, $cores: $browsers-core-default) {
     #{$attr}: #{$value};
 
@@ -29,7 +29,7 @@
     }
 }
 
-// FLEXBOX
+// flexbox
 @mixin flex($justifyContent: center, $alignItems: center, $flexWrap: wrap) {
     display: flex;
     justify-content: $justifyContent;
@@ -63,32 +63,32 @@
     @include flexBasis(calc(100% / 4), $gap);
 }
 
-// POSITION
-// Relative
+// posição
+// relativa
 @mixin relative() {
     position: relative;
 }
 
-// Absolute
+// absoluta
 @mixin absolute($top: 0, $left: 0) {
     position: absolute;
     top: $top;
     left: $left;
 }
 
-// Fixed
+// fixa
 @mixin fixed($top: 0, $left: 0) {
     position: fixed;
     top: $top;
     left: $left;
 }
 
-// TRANSITION
+// transição
 @mixin transition($property: $transition-property, $duration: $transition-duration, $timingFunction: $transition-timing-function, $delay: 0s) {
     transition: $property $duration $timingFunction $delay;
 }
 
-// BACKGROUND IMAGE
+// bg image
 @mixin backgroundImage($image: "", $repeat: no-repeat, $size: cover, $position: center center) {
     @if $image != "" {
         background-image: url($image);
@@ -99,7 +99,7 @@
     background-position: $position;
 }
 
-// RESPONSIVE DESIGN
+// design responsivo
 @mixin setResponsiveDesign($screenWidth, $isMaxWidth: false) {    
     $width: calc($screenWidth - 1px);
 
