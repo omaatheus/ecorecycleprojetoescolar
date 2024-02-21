@@ -3,7 +3,7 @@ const mobileMenu = document.querySelector(".j_mobile_menu");
 const mobileMenuIcon = document.querySelector(".j_mobile_menu_icon");
 const arrowUp = document.querySelector(".j_arrowup");
 
-// TOGGLE FIXED HEADER
+//alternar cabeçalho fixo
 window.addEventListener("scroll", () => {
     if (window.scrollY > 0) {
         fixedHeader.style.backgroundColor = "black";
@@ -28,7 +28,7 @@ window.addEventListener("scroll", () => {
     }
 })
 
-// MOBILE MENU
+// menu mobile
 mobileMenuIcon.addEventListener("click", () => {
     mobileMenu.style.left = mobileMenu.offsetLeft !== 0 ? 0 : "";
 
@@ -44,7 +44,6 @@ mobileMenuIcon.addEventListener("click", () => {
     }, 300);
 })
 
-// SCROLL UP WITH ARROW
 arrowUp.addEventListener("click", () => {
     window.scrollTo(0, 0);
 })
