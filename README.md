@@ -1,6 +1,6 @@
 Sustentabilidade Integrada à Logística Reversa
 
-Este projeto escolar propõe a integração da sustentabilidade à logística reversa, visando a otimização dos processos de pós-venda e a minimização do impacto ambiental. O projeto foi desenvolvido por uma equipe de alunos do curso de [Nome do Curso], sob a responsabilidade de [Seu Nome] como stakeholder, project owner e manager.
+Este projeto escolar propõe a integração da sustentabilidade à logística reversa, visando a otimização dos processos de pós-venda e a minimização do impacto ambiental. 
 
 Problema:
 A logística reversa tradicional apresenta desafios como: Alto custo, Impacto ambiental e Falta de integração.
